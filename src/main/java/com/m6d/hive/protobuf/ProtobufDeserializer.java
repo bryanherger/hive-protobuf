@@ -48,6 +48,7 @@ import org.apache.hadoop.io.BytesWritable;
 import org.apache.hadoop.io.Writable;
 
 import com.google.common.collect.Sets;
+import com.google.protobuf.ByteString;
 import com.google.protobuf.Descriptors.FieldDescriptor;
 import com.google.protobuf.GeneratedMessage;
 import com.google.protobuf.Message;
@@ -339,6 +340,15 @@ public class ProtobufDeserializer implements Deserializer{
       if (m.getReturnType().isPrimitive() || m.getReturnType().equals(String.class)) {
         columnNames.add(m.getName().substring(3));
         columnTypes.add(TypeInfoFactory.getPrimitiveTypeInfoFromJavaPrimitive(m.getReturnType()));
+      } else {
+	if ( m.getReturnType().isEnum() ) {
+        columnNames.add(m.getName().substring(3));
+        columnTypes.add(TypeInfoFactory.stringTypeInfo);
+	}
+	if ( (m.getReturnType().equals(ByteString.class) && !m.getName().endsWith("Bytes")) ) {
+        columnNames.add(m.getName().substring(3));
+        columnTypes.add(TypeInfoFactory.binaryTypeInfo);
+	}
       }
       if (m.getName().contains("OrBuilderList")){
         continue;
@@ -506,6 +516,9 @@ public class ProtobufDeserializer implements Deserializer{
       classMap.put(prop, m);
     }
     Object result = m.invoke(o, noArgs);
+	if (result instanceof ByteString) { 
+	 return ((ByteString)result).toByteArray();
+	}
     return result;
   }
 
