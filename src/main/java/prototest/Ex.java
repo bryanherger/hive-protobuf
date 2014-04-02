@@ -5986,6 +5986,504 @@ public final class Ex {
     // @@protoc_insertion_point(class_scope:prototest.Garage)
   }
   
+  public interface ExtendedTypesOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+    
+    // required .prototest.ExtendedTypes.SecretCipher cipher = 1;
+    boolean hasCipher();
+    prototest.Ex.ExtendedTypes.SecretCipher getCipher();
+    
+    // required bytes secretMessage = 2;
+    boolean hasSecretMessage();
+    com.google.protobuf.ByteString getSecretMessage();
+  }
+  public static final class ExtendedTypes extends
+      com.google.protobuf.GeneratedMessage
+      implements ExtendedTypesOrBuilder {
+    // Use ExtendedTypes.newBuilder() to construct.
+    private ExtendedTypes(Builder builder) {
+      super(builder);
+    }
+    private ExtendedTypes(boolean noInit) {}
+    
+    private static final ExtendedTypes defaultInstance;
+    public static ExtendedTypes getDefaultInstance() {
+      return defaultInstance;
+    }
+    
+    public ExtendedTypes getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+    
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return prototest.Ex.internal_static_prototest_ExtendedTypes_descriptor;
+    }
+    
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return prototest.Ex.internal_static_prototest_ExtendedTypes_fieldAccessorTable;
+    }
+    
+    public enum SecretCipher
+        implements com.google.protobuf.ProtocolMessageEnum {
+      None(0, 0),
+      Foo(1, 1),
+      Bar(2, 2),
+      Baz(3, 3),
+      ;
+      
+      public static final int None_VALUE = 0;
+      public static final int Foo_VALUE = 1;
+      public static final int Bar_VALUE = 2;
+      public static final int Baz_VALUE = 3;
+      
+      
+      public final int getNumber() { return value; }
+      
+      public static SecretCipher valueOf(int value) {
+        switch (value) {
+          case 0: return None;
+          case 1: return Foo;
+          case 2: return Bar;
+          case 3: return Baz;
+          default: return null;
+        }
+      }
+      
+      public static com.google.protobuf.Internal.EnumLiteMap<SecretCipher>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static com.google.protobuf.Internal.EnumLiteMap<SecretCipher>
+          internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<SecretCipher>() {
+              public SecretCipher findValueByNumber(int number) {
+                return SecretCipher.valueOf(number);
+              }
+            };
+      
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        return getDescriptor().getValues().get(index);
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return prototest.Ex.ExtendedTypes.getDescriptor().getEnumTypes().get(0);
+      }
+      
+      private static final SecretCipher[] VALUES = {
+        None, Foo, Bar, Baz, 
+      };
+      
+      public static SecretCipher valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        return VALUES[desc.getIndex()];
+      }
+      
+      private final int index;
+      private final int value;
+      
+      private SecretCipher(int index, int value) {
+        this.index = index;
+        this.value = value;
+      }
+      
+      // @@protoc_insertion_point(enum_scope:prototest.ExtendedTypes.SecretCipher)
+    }
+    
+    private int bitField0_;
+    // required .prototest.ExtendedTypes.SecretCipher cipher = 1;
+    public static final int CIPHER_FIELD_NUMBER = 1;
+    private prototest.Ex.ExtendedTypes.SecretCipher cipher_;
+    public boolean hasCipher() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    public prototest.Ex.ExtendedTypes.SecretCipher getCipher() {
+      return cipher_;
+    }
+    
+    // required bytes secretMessage = 2;
+    public static final int SECRETMESSAGE_FIELD_NUMBER = 2;
+    private com.google.protobuf.ByteString secretMessage_;
+    public boolean hasSecretMessage() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    public com.google.protobuf.ByteString getSecretMessage() {
+      return secretMessage_;
+    }
+    
+    private void initFields() {
+      cipher_ = prototest.Ex.ExtendedTypes.SecretCipher.None;
+      secretMessage_ = com.google.protobuf.ByteString.EMPTY;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+      
+      if (!hasCipher()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasSecretMessage()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+    
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeEnum(1, cipher_.getNumber());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, secretMessage_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+    
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+    
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(1, cipher_.getNumber());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, secretMessage_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+    
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+    
+    public static prototest.Ex.ExtendedTypes parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static prototest.Ex.ExtendedTypes parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static prototest.Ex.ExtendedTypes parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static prototest.Ex.ExtendedTypes parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static prototest.Ex.ExtendedTypes parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static prototest.Ex.ExtendedTypes parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    public static prototest.Ex.ExtendedTypes parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static prototest.Ex.ExtendedTypes parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static prototest.Ex.ExtendedTypes parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static prototest.Ex.ExtendedTypes parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(prototest.Ex.ExtendedTypes prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+    
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements prototest.Ex.ExtendedTypesOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return prototest.Ex.internal_static_prototest_ExtendedTypes_descriptor;
+      }
+      
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return prototest.Ex.internal_static_prototest_ExtendedTypes_fieldAccessorTable;
+      }
+      
+      // Construct using prototest.Ex.ExtendedTypes.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+      
+      private Builder(BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+      
+      public Builder clear() {
+        super.clear();
+        cipher_ = prototest.Ex.ExtendedTypes.SecretCipher.None;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        secretMessage_ = com.google.protobuf.ByteString.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+      
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+      
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return prototest.Ex.ExtendedTypes.getDescriptor();
+      }
+      
+      public prototest.Ex.ExtendedTypes getDefaultInstanceForType() {
+        return prototest.Ex.ExtendedTypes.getDefaultInstance();
+      }
+      
+      public prototest.Ex.ExtendedTypes build() {
+        prototest.Ex.ExtendedTypes result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+      
+      private prototest.Ex.ExtendedTypes buildParsed()
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        prototest.Ex.ExtendedTypes result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(
+            result).asInvalidProtocolBufferException();
+        }
+        return result;
+      }
+      
+      public prototest.Ex.ExtendedTypes buildPartial() {
+        prototest.Ex.ExtendedTypes result = new prototest.Ex.ExtendedTypes(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.cipher_ = cipher_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.secretMessage_ = secretMessage_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+      
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof prototest.Ex.ExtendedTypes) {
+          return mergeFrom((prototest.Ex.ExtendedTypes)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+      
+      public Builder mergeFrom(prototest.Ex.ExtendedTypes other) {
+        if (other == prototest.Ex.ExtendedTypes.getDefaultInstance()) return this;
+        if (other.hasCipher()) {
+          setCipher(other.getCipher());
+        }
+        if (other.hasSecretMessage()) {
+          setSecretMessage(other.getSecretMessage());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+      
+      public final boolean isInitialized() {
+        if (!hasCipher()) {
+          
+          return false;
+        }
+        if (!hasSecretMessage()) {
+          
+          return false;
+        }
+        return true;
+      }
+      
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder(
+            this.getUnknownFields());
+        while (true) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              this.setUnknownFields(unknownFields.build());
+              onChanged();
+              return this;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                this.setUnknownFields(unknownFields.build());
+                onChanged();
+                return this;
+              }
+              break;
+            }
+            case 8: {
+              int rawValue = input.readEnum();
+              prototest.Ex.ExtendedTypes.SecretCipher value = prototest.Ex.ExtendedTypes.SecretCipher.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(1, rawValue);
+              } else {
+                bitField0_ |= 0x00000001;
+                cipher_ = value;
+              }
+              break;
+            }
+            case 18: {
+              bitField0_ |= 0x00000002;
+              secretMessage_ = input.readBytes();
+              break;
+            }
+          }
+        }
+      }
+      
+      private int bitField0_;
+      
+      // required .prototest.ExtendedTypes.SecretCipher cipher = 1;
+      private prototest.Ex.ExtendedTypes.SecretCipher cipher_ = prototest.Ex.ExtendedTypes.SecretCipher.None;
+      public boolean hasCipher() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      public prototest.Ex.ExtendedTypes.SecretCipher getCipher() {
+        return cipher_;
+      }
+      public Builder setCipher(prototest.Ex.ExtendedTypes.SecretCipher value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        cipher_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearCipher() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        cipher_ = prototest.Ex.ExtendedTypes.SecretCipher.None;
+        onChanged();
+        return this;
+      }
+      
+      // required bytes secretMessage = 2;
+      private com.google.protobuf.ByteString secretMessage_ = com.google.protobuf.ByteString.EMPTY;
+      public boolean hasSecretMessage() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      public com.google.protobuf.ByteString getSecretMessage() {
+        return secretMessage_;
+      }
+      public Builder setSecretMessage(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        secretMessage_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearSecretMessage() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        secretMessage_ = getDefaultInstance().getSecretMessage();
+        onChanged();
+        return this;
+      }
+      
+      // @@protoc_insertion_point(builder_scope:prototest.ExtendedTypes)
+    }
+    
+    static {
+      defaultInstance = new ExtendedTypes(true);
+      defaultInstance.initFields();
+    }
+    
+    // @@protoc_insertion_point(class_scope:prototest.ExtendedTypes)
+  }
+  
   private static com.google.protobuf.Descriptors.Descriptor
     internal_static_prototest_Hobby_descriptor;
   private static
@@ -6036,6 +6534,11 @@ public final class Ex {
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_prototest_Garage_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_prototest_ExtendedTypes_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_prototest_ExtendedTypes_fieldAccessorTable;
   
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -6061,7 +6564,10 @@ public final class Ex {
       "\022 \n\005owner\030\003 \001(\0132\021.prototest.Person\022!\n\006dr" +
       "iver\030\004 \001(\0132\021.prototest.Person\"7\n\006Garage\022" +
       "\017\n\007address\030\001 \001(\t\022\034\n\004cars\030\002 \003(\0132\016.protote" +
-      "st.Car"
+      "st.Car\"\222\001\n\rExtendedTypes\0225\n\006cipher\030\001 \002(\016" +
+      "2%.prototest.ExtendedTypes.SecretCipher\022" +
+      "\025\n\rsecretMessage\030\002 \002(\014\"3\n\014SecretCipher\022\010" +
+      "\n\004None\020\000\022\007\n\003Foo\020\001\022\007\n\003Bar\020\002\022\007\n\003Baz\020\003"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -6148,6 +6654,14 @@ public final class Ex {
               new java.lang.String[] { "Address", "Cars", },
               prototest.Ex.Garage.class,
               prototest.Ex.Garage.Builder.class);
+          internal_static_prototest_ExtendedTypes_descriptor =
+            getDescriptor().getMessageTypes().get(10);
+          internal_static_prototest_ExtendedTypes_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_prototest_ExtendedTypes_descriptor,
+              new java.lang.String[] { "Cipher", "SecretMessage", },
+              prototest.Ex.ExtendedTypes.class,
+              prototest.Ex.ExtendedTypes.Builder.class);
           return null;
         }
       };
